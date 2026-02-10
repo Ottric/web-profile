@@ -176,6 +176,31 @@
   span {
     @apply cursor-text;
   }
+
+  b {
+    @apply font-bold;
+  }
+
+  .resume {
+    & * {
+      @apply text-card-foreground/75;
+    }
+
+    & h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      @apply text-card-foreground;
+    }
+
+    & i {
+      @apply text-card-foreground/25 font-semibold;
+    }
+  }
 }
 
 /* @utility cursor-auto {

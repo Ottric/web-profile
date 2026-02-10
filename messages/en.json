@@ -9,11 +9,53 @@
     "Documentation": "Documentation",
     "About": "About"
   },
-  "home": {
-    "getStarted": "Get started by editing",
-    "saveAndSee": "Save and see your changes instantly.",
-    "readDocs": "Read our docs",
-    "learn": "Learn",
-    "goToNextjs": "Go to nextjs.org →"
+  "Resume": {
+    "address": "156/Khor Village No.6, Bang Pla Kot, Pa Mok, Ang Thong, 14130",
+
+    "objectives": "A motivated fresh graduate with a strong interest in web application and backend development. Experienced in building web systems using TypeScript, Node.js, and Databases, with hands-on experience in modern development tools and workflows. Seeking a Web Developer role with strong motivation, adaptability, and eagerness to continuously learn new skills, while contributing to the development of maintainable, efficient, and scalable systems. A proactive team player who enjoys problem-solving, supporting teammates, and continuously improving technical skills.",
+
+    "education": {
+      "university": "Thammasat University",
+      "region": "Thailand",
+      "degree": "Bachelor of Science in Computer Science"
+    },
+
+    "experiences": [
+      {
+        "topic": "Coursework Projects, Thammasat University",
+        "start": "Oct 2023",
+        "end": "Dec 2023",
+        "responsibilities": [
+          "Deployed a Linux server using Rocky Linux 9 on Linode cloud platform to host web applications.",
+          "Configured services including DNS server, Apache web server, MySQL database, and SSH for remote access."
+        ]
+      },
+      {
+        "topic": "IT Support Intern, Birla Carbon (Thailand) Public Co., Ltd.",
+        "start": "Jun 2024",
+        "end": "Jul 2024",
+        "responsibilities": [
+          "Provided technical support to end-users, resolving hardware and software issues.",
+          "Assisted in setting up, configuring, and maintaining workstations, printers, and network equipment."
+        ]
+      },
+      {
+        "topic": "NATIONAL SCIENCE AND TECHNOLOGY DEVELOPMENT AGENCY (Traffy Fondue Group, Traffy Team)",
+        "start": "Jan 2025",
+        "end": "Apr 2025",
+        "responsibilities": [
+          "Developed a LINE Chat Bot to facilitate the reporting of issues in LINE groups, enhancing communication and issue resolution."
+        ]
+      },
+      {
+        "topic": "Golden Jubilee Medical Center (Academic Research and Services)",
+        "start": "Aug 2025",
+        "end": "Dec 2025",
+        "responsibilities": [
+          "Developed a web-based internship application management system with automated application scheduling and centralized data management.",
+          "Designed a modular Frontend-Backend architecture integrating Google Forms, Google Sheets, and Encore.ts for automated scheduling and API services."
+        ]
+      }
+    ]
   }
 }
