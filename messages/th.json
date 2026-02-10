@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "title": "สร้างแอป Next",
+    "description": "สร้างโดย create next app"
+  },
+  "Header": {
+    "Home": "หน้าแรก",
+    "Certificate": "ใบรับรอง",
+    "Documentation": "เอกสาร",
+    "About": "เกี่ยวกับ"
+  },
+  "home": {
+    "getStarted": "เริ่มต้นโดยแก้ไข",
+    "saveAndSee": "บันทึกและดูการเปลี่ยนแปลงของคุณทันที",
+    "readDocs": "อ่านเอกสาร",
+    "learn": "เรียนรู้",
+    "goToNextjs": "ไปที่ nextjs.org →"
+  }
+}
