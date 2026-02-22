@@ -12,16 +12,13 @@ import {
 
 import { getTranslations } from "next-intl/server";
 
-import { type ScheduleData } from "@/app/api/seakeen-schedule/route";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { getSeaKeenSchedule } from "@/lib/seakeen";
 
 export async function Schedule() {
   const t = await getTranslations("SEAKEEN");
-  const response = await fetch(`${process.env.PUBLIC_BASE_URL}/api/seakeen-schedule`, {
-    next: { revalidate: 3600 },
-  });
-  const data: ScheduleData = await response.json();
+  const data = await getSeaKeenSchedule();
 
   const prev = data.values.slice(1, 6);
   const next = data.values.slice(6);

@@ -1,13 +1,11 @@
 import { GoogleAuth } from "google-auth-library";
 import { google } from "googleapis";
 
-import { NextRequest, NextResponse } from "next/server";
-
 export type ScheduleData = {
   values: string[][];
 };
 
-export async function GET(request: NextRequest) {
+export async function getSeaKeenSchedule(): Promise<ScheduleData> {
   try {
     const auth = new GoogleAuth({
       credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!),
@@ -28,9 +26,9 @@ export async function GET(request: NextRequest) {
     });
 
     const values = response.data.values || [];
-    return NextResponse.json({ values } satisfies ScheduleData);
+    return { values };
   } catch (error) {
     console.error("Error fetching data from Google Sheets:", error);
-    return NextResponse.json({ error: "Failed to fetch data from Google Sheets" }, { status: 500 });
+    return { values: [] };
   }
 }
