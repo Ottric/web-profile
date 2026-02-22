@@ -10,5 +10,4 @@ export const config = {
   // - Next.js internals
   // - Static files
   matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
-  runtime: "edge",
 };
