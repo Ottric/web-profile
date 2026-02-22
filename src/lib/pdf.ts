@@ -1,4 +1,4 @@
-import { stat } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "path";
 import { PDFParse } from "pdf-parse";
 
@@ -16,7 +16,10 @@ export async function getPDFInfo(filePath: string): Promise<PDFInfo> {
     const stats = await stat(fullPath);
     const fileSize = stats.size;
 
-    const parser = new PDFParse({ url: `${process.env.PUBLIC_BASE_URL}${filePath}` });
+    const buffer = await readFile(fullPath);
+
+    // const parser = new PDFParse({ url: `${process.env.PUBLIC_BASE_URL}${filePath}` });
+    const parser = new PDFParse({ data: buffer });
     const info = await parser.getInfo({ parsePageInfo: true });
 
     return {
