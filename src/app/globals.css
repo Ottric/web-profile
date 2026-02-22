@@ -5,7 +5,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: DM Sans, sans-serif;
+  --font-sans: var(--font-geist-sans), var(--font-prompt), DM Sans, sans-serif;
   --font-mono: Space Mono, monospace;
   --font-serif: DM Sans, sans-serif;
   --radius: 1rem;
@@ -97,7 +97,7 @@
   --sidebar-ring: oklch(0.7853 0.1041 274.7134);
   --destructive-foreground: oklch(1 0 0);
   --radius: 1rem;
-  --font-sans: DM Sans, sans-serif;
+  --font-sans: var(--font-geist-sans), var(--font-prompt), DM Sans, sans-serif;
   --font-serif: DM Sans, sans-serif;
   --font-mono: Space Mono, monospace;
   --spacing: 0.25rem;
@@ -146,7 +146,7 @@
   --sidebar-ring: oklch(0.6801 0.1583 276.9349);
   --destructive-foreground: oklch(1 0 0);
   --radius: 1rem;
-  --font-sans: DM Sans, sans-serif;
+  --font-sans: var(--font-geist-sans), var(--font-prompt), DM Sans, sans-serif;
   --font-serif: DM Sans, sans-serif;
   --font-mono: Space Mono, monospace;
   --spacing: 0.25rem;
@@ -162,7 +162,7 @@
 
 @layer base {
   * {
-    @apply font-(family-name:--font-geist-sans);
+    @apply font-sans;
   }
 
   html {

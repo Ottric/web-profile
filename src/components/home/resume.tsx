@@ -7,30 +7,30 @@ import { Link } from "@/i18n/navigation";
 
 import { TechStack } from "./tech-stack";
 
-export const metadata = {
-  title: "Resume - Patcharapon Tappakwan",
-  description: "Patcharapon Tappakwan's resume page",
-};
-
 interface ExperienceItem {
   topic: string;
-  start: string;
-  end: string;
-  responsibilities: string[];
+  start?: string;
+  end?: string;
+  responsibilities?: string[];
+
+  date?: string;
+  details?: string[];
 }
 
 export async function Resume() {
   const t = await getTranslations("Resume");
 
   return (
-    <div className="resume bg-card mt-32 mb-12 flex w-full max-w-328 flex-col gap-4 px-6 py-10 text-justify font-light wrap-break-word hyphens-auto shadow-xl/20 [text-justify:inter-character] md:w-3/4 md:gap-6 md:px-8 md:py-12 lg:px-12 lg:py-16">
+    <div className="resume bg-card my-12 flex w-full max-w-328 flex-col gap-4 px-6 py-10 text-justify font-light wrap-break-word hyphens-auto shadow-xl/20 [text-justify:inter-character] md:w-3/4 md:gap-6 md:px-8 md:py-12 lg:px-12 lg:py-16">
       <section className="flex flex-col">
         <h1 className="cursor-text font-(family-name:--font-sarabun) text-base font-bold md:text-xl lg:text-3xl">
           Patcharapon Tappakwan
         </h1>
-        <i className="eground/35 cursor-text font-(family-name:--font-sarabun) text-sm md:text-lg lg:text-2xl">
-          พชรพล ทัพผักแว่น
-        </i>
+        <h2>
+          <i className="eground/35 cursor-text font-(family-name:--font-sarabun) text-sm md:text-lg lg:text-2xl">
+            พชรพล ทัพผักแว่น
+          </i>
+        </h2>
         <Separator className="bg-card-foreground mt-3 data-[orientation=horizontal]:h-0.5" />
       </section>
       <section className="flex flex-col">
@@ -95,7 +95,7 @@ export async function Resume() {
               {item.start}&mdash;{item.end}
             </i>
             <ul className="mb-2 ml-4 cursor-text list-disc text-xs md:text-sm lg:text-lg">
-              {item.responsibilities.map((responsibility, idx) => (
+              {item.responsibilities!.map((responsibility, idx) => (
                 <li className="font-(family-name:--font-sarabun)" key={`exp-res-${idx}`}>
                   {responsibility}
                 </li>
@@ -109,24 +109,23 @@ export async function Resume() {
           Activities
         </h2>
         <Separator className="bg-card-foreground/35 my-1" />
-        <h3 className="cursor-text font-(family-name:--font-sarabun) text-xs font-semibold md:text-sm lg:text-xl">
-          Practical Training: "Development of Email Servers to Support Thai Language Emails (EAI)"
-          by THNIC
-        </h3>
-        <i className="eground/45 cursor-text font-(family-name:--font-sarabun) text-xs md:text-sm lg:text-lg">
-          Nov 2023
-        </i>
-        <ul className="mb-2 ml-4 cursor-text list-disc text-xs md:text-sm lg:text-lg">
-          <li className="font-(family-name:--font-sarabun)">
-            Participated in an intensive hands-on workshop conducted by THNIC aimed at equipping
-            participants with the skills to develop email servers capable of supporting Thai
-            language emails (EAI).
-          </li>
-          <li className="font-(family-name:--font-sarabun)">
-            Successfully configured and deployed personal email servers using Ubuntu operating
-            system, enabling practical experience in server setup and administration.
-          </li>
-        </ul>
+        {t.raw("activities").map((activity: ExperienceItem, idx: number) => (
+          <React.Fragment key={`act-${idx}`}>
+            <h3 className="cursor-text font-(family-name:--font-sarabun) text-xs font-semibold md:text-sm lg:text-xl">
+              {activity.topic}
+            </h3>
+            <i className="eground/45 cursor-text font-(family-name:--font-sarabun) text-xs md:text-sm lg:text-lg">
+              {activity.date}
+            </i>
+            <ul className="mb-2 ml-4 cursor-text list-disc text-xs md:text-sm lg:text-lg">
+              {activity.details!.map((detail, idx) => (
+                <li className="font-(family-name:--font-sarabun)" key={`act-det-${idx}`}>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </React.Fragment>
+        ))}
       </section>
       <section className="flex flex-col">
         <h2 className="cursor-text font-(family-name:--font-sarabun) text-base font-semibold md:text-lg lg:text-2xl">

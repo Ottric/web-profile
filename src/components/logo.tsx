@@ -21,8 +21,8 @@ export function Logo({ className }: { className?: string }) {
         className
       )}
     >
-      <p className="font-black">O</p>
-      <p className="font-(family-name:--font-cloud) font-bold">ttric</p>
+      <span className="font-(family-name:--font-geist-sans) font-black">O</span>
+      <span className="font-(family-name:--font-cloud) font-bold">ttric</span>
     </span>
   );
 }

@@ -2,6 +2,8 @@
 
 import { Archive, Award, House, Menu, PanelRightClose, Smile, Star } from "lucide-react";
 
+import { useState } from "react";
+
 import { useTranslations } from "next-intl";
 
 import { LangToggle } from "@/components/lang-toggle";
@@ -11,9 +13,9 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
+  DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -23,6 +25,7 @@ import { Logo } from "./logo";
 export function Header() {
   const t = useTranslations("Header");
   const pathname = usePathname();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const navItems = [
     { href: "/", label: t("Home"), key: "home", icon: House },
@@ -65,21 +68,21 @@ export function Header() {
         <div className="flex items-center gap-2">
           <LangToggle />
           <ThemeToggle />
-          <Drawer direction="right">
-            <DrawerTrigger asChild className="hidden md:flex lg:hidden">
-              <Button
-                variant={"outline"}
-                className="focus:bg-accent dark:focus:bg-accent dark:focus:text-accent-foreground dark:hover:bg-accent dark:hover:text-accent-foreground size-10 cursor-pointer items-center rounded-full p-0 transition-colors"
-                aria-label="Menu"
-              >
-                <Menu size={24} className="size-6" />
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="hidden md:flex lg:hidden">
+          <Drawer direction="right" open={drawerOpen} onOpenChange={setDrawerOpen}>
+            <Button
+              variant={"outline"}
+              className="focus:bg-accent dark:focus:bg-accent dark:focus:text-accent-foreground dark:hover:bg-accent dark:hover:text-accent-foreground hidden size-10 cursor-pointer items-center rounded-full p-0 transition-colors md:flex lg:hidden"
+              aria-label="Menu"
+              onClick={() => setDrawerOpen(true)}
+            >
+              <Menu size={24} className="size-6" />
+            </Button>
+            <DrawerContent forceMount className="hidden md:flex lg:hidden">
               <DrawerHeader className="flex flex-row items-center justify-between">
                 <DrawerTitle>
                   <Logo />
                 </DrawerTitle>
+                <DrawerDescription className="sr-only">Main navigation menu</DrawerDescription>
                 <DrawerClose asChild>
                   <Button
                     variant={"outline"}

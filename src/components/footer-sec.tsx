@@ -19,7 +19,7 @@ export function Footer() {
             <Logo className="text-base" />
             &nbsp;] Patcharapon Tappakwan
           </span>
-          <section className="flex items-center whitespace-nowrap md:gap-2">
+          <div className="flex items-center whitespace-nowrap md:gap-2">
             <Link
               href="https://x.com/pon__uod"
               target="_blank"
@@ -51,7 +51,7 @@ export function Footer() {
             >
               <Instagram className="size-6 p-0.5" />
             </Link>
-          </section>
+          </div>
         </div>
       </div>
     </footer>

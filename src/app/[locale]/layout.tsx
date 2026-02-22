@@ -21,13 +21,13 @@ const geistMono = Geist_Mono({
 const sarabun = Sarabun({
   variable: "--font-sarabun",
   subsets: ["thai", "latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const prompt = Prompt({
   variable: "--font-prompt",
   subsets: ["thai", "latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export function generateStaticParams() {
@@ -57,7 +57,7 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sarabun.variable} ${prompt.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sarabun.variable} ${prompt.variable} overflow-x-hidden antialiased`}
       >
         <ThemeProvider
           attribute="class"

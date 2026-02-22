@@ -3,22 +3,22 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/en/`,
+      url: `${process.env.PUBLIC_BASE_URL}/en/`,
       lastModified: new Date(),
       priority: 1,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/th/`,
+      url: `${process.env.PUBLIC_BASE_URL}/th/`,
       lastModified: new Date(),
       priority: 1,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/en/certificate`,
+      url: `${process.env.PUBLIC_BASE_URL}/en/certificate`,
       lastModified: new Date(),
       priority: 0.8,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/th/certificate`,
+      url: `${process.env.PUBLIC_BASE_URL}/th/certificate`,
       lastModified: new Date(),
       priority: 0.8,
     },
