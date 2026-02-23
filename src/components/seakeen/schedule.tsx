@@ -24,7 +24,7 @@ export async function Schedule() {
   const next = data.values.slice(6);
 
   return (
-    <div className="w-full p-12">
+    <div className="w-full px-2 py-12 md:px-12">
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">Schedule</CardTitle>
