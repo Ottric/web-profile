@@ -99,7 +99,7 @@ export async function Schedule() {
                         href={event[11]}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="overflow-hidden text-ellipsis whitespace-nowrap hover:underline"
+                        className="cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap hover:underline"
                       >
                         {event[11]}
                       </a>
@@ -172,7 +172,7 @@ export async function Schedule() {
                         href={event[11]}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="overflow-hidden text-ellipsis whitespace-nowrap hover:underline"
+                        className="cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap hover:underline"
                       >
                         {event[11]}
                       </a>

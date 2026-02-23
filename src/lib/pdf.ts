@@ -1,5 +1,4 @@
-import { readFile, stat } from "node:fs/promises";
-import path from "path";
+// import path from "path";
 import { PDFParse } from "pdf-parse";
 
 export interface PDFInfo {
@@ -10,16 +9,16 @@ export interface PDFInfo {
 
 export async function getPDFInfo(filePath: string): Promise<PDFInfo> {
   try {
-    const cleanPath = filePath.replace(/^\/+/, "");
-    const fullPath = path.join(process.cwd(), "public", cleanPath);
+    // const cleanPath = filePath.replace(/^\/+/, "");
+    // const fullPath = path.join(process.cwd(), "public", cleanPath);
 
-    const stats = await stat(fullPath);
-    const fileSize = stats.size;
+    const file = await fetch(`${process.env.PUBLIC_BASE_URL}${filePath}`, { method: "HEAD" });
+    const fileSize = Number(file.headers.get("content-length"));
 
-    const buffer = await readFile(fullPath);
+    // const buffer = await readFile(fullPath);
 
-    // const parser = new PDFParse({ url: `${process.env.PUBLIC_BASE_URL}${filePath}` });
-    const parser = new PDFParse({ data: buffer });
+    const parser = new PDFParse({ url: `${process.env.PUBLIC_BASE_URL}${filePath}` });
+    // const parser = new PDFParse({ data: buffer });
     const info = await parser.getInfo({ parsePageInfo: true });
 
     return {

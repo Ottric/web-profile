@@ -1,5 +1,4 @@
 import { GoogleAuth } from "google-auth-library";
-import { google } from "googleapis";
 
 export type ScheduleData = {
   values: string[][];
@@ -9,23 +8,24 @@ export async function getSeaKeenSchedule(): Promise<ScheduleData> {
   try {
     const auth = new GoogleAuth({
       credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT!),
-      scopes: [
-        "https://www.googleapis.com/auth/drive",
-        "https://www.googleapis.com/auth/drive.readonly",
-        "https://www.googleapis.com/auth/drive.file",
-        "https://www.googleapis.com/auth/spreadsheets",
-        "https://www.googleapis.com/auth/spreadsheets.readonly",
-      ],
+      scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
     });
 
-    const sheets = google.sheets({ version: "v4", auth });
+    const client = await auth.getClient();
+    const accessToken = await client.getAccessToken();
 
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-      range: "Filter",
-    });
+    const response = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${process.env.GOOGLE_SHEET_ID}/values/Filter`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken.token}`,
+        },
+        next: { revalidate: 3600 },
+      }
+    );
+    const data: ScheduleData = await response.json();
 
-    const values = response.data.values || [];
+    const values = data.values || [];
     return { values };
   } catch (error) {
     console.error("Error fetching data from Google Sheets:", error);
