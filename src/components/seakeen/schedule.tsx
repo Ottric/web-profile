@@ -72,11 +72,14 @@ export async function Schedule() {
                           HashTag
                         </span>
                         <div className="flex gap-2">
-                          {event[5].split(/,\s*/).map((tag, i) => (
-                            <Badge key={i} variant="secondary" className="px-2 py-1 text-xs">
-                              {tag.trim()}
-                            </Badge>
-                          ))}
+                          {event[5]
+                            .trim()
+                            .split(/\s+/)
+                            .map((tag, i) => (
+                              <Badge key={i} variant="secondary" className="px-2 py-1 text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
                         </div>
                       </div>
                     </div>
