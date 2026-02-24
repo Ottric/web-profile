@@ -60,6 +60,14 @@ export async function GridCert() {
       tag: "Internship",
       date: "Mar. 2025",
     },
+    {
+      id: 7,
+      title: "Letter Internship - Golden Jubilee Medical Center",
+      detail: t("Golden_Jubilee_internship"),
+      imageUrl: "/image/Letter-GJ-ARS.png",
+      tag: "Internship",
+      date: "Dec. 2025",
+    },
   ];
 
   return (

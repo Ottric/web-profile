@@ -12,7 +12,7 @@
   "Resume": {
     "address": "156/Khor Village No.6, Bang Pla Kot, Pa Mok, Ang Thong, 14130",
 
-    "objectives": "A motivated fresh graduate with a strong interest in web application and backend development. Experienced in building web systems using TypeScript, Node.js, and Databases, with hands-on experience in modern development tools and workflows. Seeking a Web Developer role with strong motivation, adaptability, and eagerness to continuously learn new skills, while contributing to the development of maintainable, efficient, and scalable systems. A proactive team player who enjoys problem-solving, supporting teammates, and continuously improving technical skills.",
+    "objectives": "A motivated fresh graduate with a strong interest in web applications and backend development. Experienced in building web systems using TypeScript, Node.js, and Databases, with hands-on experience in modern development tools and workflows. Seeking a Web Developer role with strong motivation, adaptability, and eagerness to continuously learn new skills, while contributing to the development of maintainable, efficient, and scalable systems. A proactive team player who enjoys problem-solving, supporting teammates, and continuously improving technical skills.",
 
     "education": {
       "university": "Thammasat University",
@@ -75,7 +75,8 @@
     "GDSC_figma": "A beginner's guide to Figma, covering the basics of UI/UX design.",
     "CCNA_intro": "An introduction to networking concepts, protocols, and technologies.",
     "CCNA_switch": "A comprehensive course on switching, routing, and wireless networking essentials.",
-    "NSTDA_intrenship": "A letter of recommendation for my internship at NECTEC NSTDA Traffy Team."
+    "NSTDA_intrenship": "A letter of recommendation for my internship at NECTEC NSTDA Traffy Team.",
+    "Golden_Jubilee_internship": "A letter of recommendation for my internship at Golden Jubilee Medical Center."
   },
   "SEAKEEN": {
     "sea_profile_url": "/image/sea_en.jpg",

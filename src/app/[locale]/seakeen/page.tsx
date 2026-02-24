@@ -72,7 +72,7 @@ async function SEAKEENPage() {
       <Header />
       <main className="flex min-h-[calc(100vh-10.5rem)] w-screen cursor-default flex-col items-center-safe pt-[5.4rem] md:min-h-[calc(100vh-7.5rem)]">
         <h1 className="my-12 text-4xl font-bold">SEAKEEN</h1>
-        <div className="hidden w-full max-w-3xl grid-cols-2 gap-4 p-6 md:grid">
+        <div className="hidden w-full max-w-3xl grid-cols-2 gap-4 p-6 lg:grid">
           <Card className="relative aspect-4/5 w-full cursor-pointer overflow-hidden transition-transform duration-300 ease-out hover:z-50 hover:scale-200">
             <Image
               src={`${t("keen_profile_url")}`}

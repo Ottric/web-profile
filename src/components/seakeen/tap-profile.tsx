@@ -35,7 +35,7 @@ export function TapProfile() {
     <Tabs
       value={activeTab}
       onValueChange={setActiveTab}
-      className="w-full max-w-md items-center-safe px-2 md:hidden"
+      className="w-full max-w-md items-center-safe px-2 lg:hidden"
     >
       <TabsList className="relative grid w-full grid-cols-2">
         <motion.div
