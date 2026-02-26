@@ -22,5 +22,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.8,
     },
+    {
+      url: `${process.env.PUBLIC_BASE_URL}/en/documentation`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.PUBLIC_BASE_URL}/th/documentation`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.PUBLIC_BASE_URL}/en/seakeen`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.PUBLIC_BASE_URL}/th/seakeen`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.PUBLIC_BASE_URL}/en/about`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.PUBLIC_BASE_URL}/th/about`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
   ];
 }
