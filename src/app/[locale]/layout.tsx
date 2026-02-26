@@ -30,6 +30,12 @@ const prompt = Prompt({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+export const metadata = {
+  verification: {
+    google: "1s4AmcAUfm7dA4u1ZHh_DwPcp0qVWIBcRSM8lawWn2s",
+  },
+};
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
