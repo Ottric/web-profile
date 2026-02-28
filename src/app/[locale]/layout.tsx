@@ -1,3 +1,6 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { Geist, Geist_Mono, Prompt, Sarabun } from "next/font/google";
@@ -73,6 +76,8 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
