@@ -42,9 +42,11 @@ export async function Schedule() {
                       <CalendarClock className="mr-1 inline-block" size={24} />
                       <strong>
                         {new Date(event[0]).getTime() - new Date().getTime() >
-                        7 * 24 * 60 * 60 * 1000
+                        3 * 24 * 60 * 60 * 1000
                           ? format(event[0], "MMMM d, yyyy")
-                          : formatDistanceToNow(event[0], { addSuffix: true })}
+                          : formatDistanceToNow(`${event[0]}T${event[1] || "00:00"}+07:00`, {
+                              addSuffix: true,
+                            })}
                       </strong>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
@@ -71,7 +73,7 @@ export async function Schedule() {
                           <Hash className="inline-block" size={14} strokeWidth={3} />
                           HashTag
                         </span>
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                           {event[5]
                             .trim()
                             .split(/\s+/)
@@ -116,7 +118,7 @@ export async function Schedule() {
             <h2 className="mb-2 text-xl font-semibold">Previous Events</h2>
             <div className="space-y-2">
               {prev.map((event, index) => (
-                <div key={index} className="bg-muted flex flex-col gap-4 rounded-md p-4">
+                <div key={index} className="bg-muted flex flex-col gap-4 rounded-md p-4 opacity-60">
                   <h3 className="text-lg font-medium">{event[2]}</h3>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="flex items-center gap-2 text-sm">
@@ -147,7 +149,7 @@ export async function Schedule() {
                           <Hash className="inline-block" size={14} strokeWidth={3} />
                           HashTag
                         </span>
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                           {event[5].split(/,\s*/).map((tag, i) => (
                             <Badge key={i} variant="secondary" className="px-2 py-1 text-xs">
                               {tag.trim()}

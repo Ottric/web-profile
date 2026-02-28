@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: Props) {
     alternates: {
       canonical: `${process.env.PUBLIC_BASE_URL}/${locale}`,
       languages: {
-        en: "/en",
-        th: "/th",
+        en: `${process.env.PUBLIC_BASE_URL}/en`,
+        th: `${process.env.PUBLIC_BASE_URL}/th`,
       },
     },
 

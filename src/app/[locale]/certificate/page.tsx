@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: Props) {
     alternates: {
       canonical: `${process.env.PUBLIC_BASE_URL}/${locale}/certificate`,
       languages: {
-        en: "/en/certificate",
-        th: "/th/certificate",
+        en: `${process.env.PUBLIC_BASE_URL}/en/certificate`,
+        th: `${process.env.PUBLIC_BASE_URL}/th/certificate`,
       },
     },
 

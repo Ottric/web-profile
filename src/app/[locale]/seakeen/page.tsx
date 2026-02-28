@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: Props) {
     alternates: {
       canonical: `${process.env.PUBLIC_BASE_URL}/${locale}/seakeen`,
       languages: {
-        en: "/en/seakeen",
-        th: "/th/seakeen",
+        en: `${process.env.PUBLIC_BASE_URL}/en/seakeen`,
+        th: `${process.env.PUBLIC_BASE_URL}/th/seakeen`,
       },
     },
 
@@ -72,8 +72,11 @@ async function SEAKEENPage() {
       <Header />
       <main className="flex min-h-[calc(100vh-10.5rem)] w-screen cursor-default flex-col items-center-safe pt-[5.4rem] md:min-h-[calc(100vh-7.5rem)]">
         <h1 className="my-12 text-4xl font-bold">SEAKEEN</h1>
-        <div className="hidden w-full max-w-3xl grid-cols-2 gap-4 p-6 lg:grid">
-          <Card className="relative aspect-4/5 w-full cursor-pointer overflow-hidden transition-transform duration-300 ease-out hover:z-50 hover:scale-200">
+        <div className="group hidden w-full max-w-3xl grid-cols-2 gap-4 p-6 lg:grid">
+          <Card
+            className="relative aspect-4/5 w-full cursor-pointer overflow-hidden transition-all duration-300 ease-out group-has-[#sea-profile:hover]:opacity-0 hover:z-50 hover:scale-180"
+            id="keen-profile"
+          >
             <Image
               src={`${t("keen_profile_url")}`}
               alt="KEEN Profile Image"
@@ -83,7 +86,10 @@ async function SEAKEENPage() {
               sizes="(max-width: 896px) 100vw, 896px"
             />
           </Card>
-          <Card className="relative aspect-4/5 w-full cursor-pointer overflow-hidden transition-transform duration-300 ease-out hover:z-50 hover:scale-200">
+          <Card
+            className="relative aspect-4/5 w-full cursor-pointer overflow-hidden transition-all duration-300 ease-out group-has-[#keen-profile:hover]:opacity-0 hover:z-50 hover:scale-180"
+            id="sea-profile"
+          >
             <Image
               src={`${t("sea_profile_url")}`}
               alt="SEA Profile Image"
