@@ -62,7 +62,59 @@ export default async function SEAKEEN({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <SEAKEENPage />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${process.env.PUBLIC_BASE_URL}/#person`,
+        name: "Patcharapon Tappakwan",
+        alternateName: "Ottric",
+        url: process.env.PUBLIC_BASE_URL,
+        sameAs: ["https://github.com/Ottric"],
+        knowsAbout: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Web Development",
+          "Frontend Development",
+          "Backend Development",
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${process.env.PUBLIC_BASE_URL}/${locale}/seakeen`,
+        url: `${process.env.PUBLIC_BASE_URL}/${locale}/seakeen`,
+        name: "SEAKEEN - Patcharapon Tappakwan | Full-Stack Developer",
+        description:
+          "SEAKEEN is a project by Patcharapon Tappakwan, showcasing his work in web development.",
+        inLanguage: locale === "en" ? "en-US" : "th-TH",
+        keywords: ["SEAKEEN", "keenkeno", "sea_ta_lay", "ONLY BOO!", "Head2Head", "WEIRDO-101"],
+        isPartOf: {
+          "@type": "WebSite",
+          "@id": `${process.env.PUBLIC_BASE_URL}/#website`,
+          url: process.env.PUBLIC_BASE_URL,
+          name: "Patcharapon Tappakwan",
+          publisher: {
+            "@id": `${process.env.PUBLIC_BASE_URL}/#person`,
+          },
+        },
+        author: {
+          "@id": `${process.env.PUBLIC_BASE_URL}/#person`,
+        },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SEAKEENPage />
+    </>
+  );
 }
 
 async function SEAKEENPage() {
