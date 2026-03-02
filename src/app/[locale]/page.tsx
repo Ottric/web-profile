@@ -91,7 +91,7 @@ export default async function Home({ params }: Props) {
         ],
       },
       {
-        "@type": "WebSite",
+        "@type": "WebPage",
         "@id": `${process.env.PUBLIC_BASE_URL}/${locale}`,
         url: `${process.env.PUBLIC_BASE_URL}/${locale}`,
         name: "Resume - Patcharapon Tappakwan | Full-Stack Developer",
