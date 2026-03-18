@@ -27,22 +27,27 @@ export async function DocTable() {
   const pdfFiles = [
     { id: 1, fileName: "Resume.pdf", path: "/pdf/Resume.pdf" },
     { id: 2, fileName: "Transcript.pdf", path: "/pdf/Transcript.pdf" },
-    { id: 3, fileName: "TU-GET-PBT.pdf", path: "/pdf/TU-GET-PBT.pdf" },
-    { id: 4, fileName: "GDSC_basicLinux101.pdf", path: "/pdf/GDSC_basicLinux101.pdf" },
-    { id: 5, fileName: "GDSC_react101.pdf", path: "/pdf/GDSC_react101.pdf" },
-    { id: 6, fileName: "GDSC_figma101.pdf", path: "/pdf/GDSC_figma101.pdf" },
     {
-      id: 7,
+      id: 3,
+      fileName: "Complete-Examination-Certificate.pdf",
+      path: "/pdf/Complete-Examination-Certificate.pdf",
+    },
+    { id: 4, fileName: "TU-GET-PBT.pdf", path: "/pdf/TU-GET-PBT.pdf" },
+    { id: 5, fileName: "GDSC_basicLinux101.pdf", path: "/pdf/GDSC_basicLinux101.pdf" },
+    { id: 6, fileName: "GDSC_react101.pdf", path: "/pdf/GDSC_react101.pdf" },
+    { id: 7, fileName: "GDSC_figma101.pdf", path: "/pdf/GDSC_figma101.pdf" },
+    {
+      id: 8,
       fileName: "CCNA_introductionToNetworks.pdf",
       path: "/pdf/CCNA_introductionToNetworks.pdf",
     },
     {
-      id: 8,
+      id: 9,
       fileName: "CCNA_switchingRoutingWirelessEssentials.pdf",
       path: "/pdf/CCNA_switchingRoutingWirelessEssentials.pdf",
     },
-    { id: 9, fileName: "Letter-NSTDA-NECTEC.pdf", path: "/pdf/Letter-NSTDA-NECTEC.pdf" },
-    { id: 10, fileName: "Letter-GJ-ARS.pdf", path: "/pdf/Letter-GJ-ARS.pdf" },
+    { id: 10, fileName: "Letter-NSTDA-NECTEC.pdf", path: "/pdf/Letter-NSTDA-NECTEC.pdf" },
+    { id: 11, fileName: "Letter-GJ-ARS.pdf", path: "/pdf/Letter-GJ-ARS.pdf" },
   ];
 
   const pdfInfos = await Promise.all(pdfFiles.map((file) => getPDFInfo(file.path)));
